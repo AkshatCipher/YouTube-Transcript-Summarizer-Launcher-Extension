@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Transcript Summarizer",
+  "version": "1.0",
+  "description": "Extract YouTube video transcripts and summarize them using your preferred AI platform",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "64": "icons/64px_youtube_logo_icon.png",
+      "128": "icons/128px_youtube_logo_icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "64": "icons/64px_youtube_logo_icon.png",
+    "128": "icons/128px_youtube_logo_icon.png"
+  },
+  "web_accessible_resources": [{
+    "resources": ["icons/*"],
+    "matches": ["https://www.youtube.com/*"]
+  }]
+} 

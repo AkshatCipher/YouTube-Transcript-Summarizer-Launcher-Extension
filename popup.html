@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Transcript Summarizer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="icons/64px_youtube_logo_icon.png" alt="YouTube Logo" class="youtube-icon">
+      <h1>YouTube Transcript Summarizer</h1>
+    </div>
+    
+    <div class="settings-section">
+      <h2>AI Platform</h2>
+      <select id="aiPlatform">
+        <option value="chatgpt">ChatGPT</option>
+        <option value="gemini">Gemini</option>
+        <option value="claude">Claude</option>
+      </select>
+      <p class="settings-description">Choose your preferred AI platform for summarization</p>
+    </div>
+
+    <div class="settings-section">
+      <h2>Custom Prompt Template</h2>
+      <textarea id="customPrompt" rows="4" placeholder="Enter your custom prompt template. Use [transcript] as a placeholder for the video transcript."></textarea>
+      <p class="settings-description">Default: "Please summarize this YouTube video transcript:\n\n[transcript]"</p>
+    </div>
+
+    <div class="settings-section">
+      <h2>Summary Settings</h2>
+      <div class="summary-settings">
+        <div class="setting-row">
+          <label for="maxLength">Maximum Summary Length:</label>
+          <input type="number" id="maxLength" value="130" min="30" max="500">
+        </div>
+        <div class="setting-row">
+          <label for="minLength">Minimum Summary Length:</label>
+          <input type="number" id="minLength" value="30" min="10" max="200">
+        </div>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button id="saveSettings" class="primary-button">Save Settings</button>
+      <button id="resetSettings" class="secondary-button">Reset to Default</button>
+    </div>
+
+    <div id="status" class="status-message"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 
